@@ -8,8 +8,14 @@
     "build": "vite build"
   },
   "devDependencies": {
+    "@iconify/json": "^2.2.350",
+    "@iconify/tailwind4": "^1.0.6",
+    "@tailwindcss/typography": "^0.5.16",
+    "@tailwindcss/vite": "^4.1.10",
     "@types/bun": "latest",
     "concurrently": "^9.1.2",
+    "daisyui": "^5.0.43",
+    "tailwindcss": "^4.1.10",
     "vite": "^6.3.5"
   },
   "peerDependencies": {
