@@ -1,8 +1,14 @@
 from django.forms import BaseForm as _DjangoBaseForm
 from django.forms import widgets
+from django.utils.safestring import SafeText, mark_safe
+from django.template.loader import render_to_string
 
 
 class BaseForm(_DjangoBaseForm):
+    def as_div(self) -> SafeText:
+        html = render_to_string("core/forms/as_div.html", {"form": self})
+        return mark_safe(html)
+
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
 

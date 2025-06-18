@@ -1,0 +1,37 @@
+{# non field errors #}
+{% if form.non_field_errors() %}
+    <div>
+        {% for error in form.non_field_errors() %}
+            <span class="text-error block">{{ error }}</span>
+        {% endfor %}
+
+        {# djlint:off #}
+        <div class="divider divider-error m-0 p-0"></div>
+        {# djlint:on #}
+    </div>
+{% endif %}
+
+{% for field in form %}
+    <div class="grid gap-2">
+        {# field label #}
+        <label class="block" for="{{ field.id_for_label }}">
+            {{ field.label }}:
+        </label>
+
+        {# field errors #}
+        {% if field.errors %}
+            <div>
+                {% for error in field.errors %}
+                    <span class="text-error block">{{ error }}</span>
+                {% endfor %}
+            </div>
+        {% endif %}
+
+        {{ field }}
+
+        {# field help_text #}
+        <p class="text-sm opacity-95">
+            {{ field.help_text }}
+        </p>
+    </div>
+{% endfor %}
