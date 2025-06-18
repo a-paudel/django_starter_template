@@ -7,6 +7,9 @@
             {% block title %}
             {% endblock title %}
         </title>
+
+        {{ vite_hmr_client() }}
+        {{ vite_asset("resources/js/app.ts") }}
     </head>
     <body>
         {% block body %}

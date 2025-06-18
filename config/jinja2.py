@@ -1,6 +1,7 @@
 from jinja2.environment import Environment
 from django.templatetags.static import static
 from django.urls import reverse as _django_reverse
+from django_vite.templatetags.django_vite import vite_hmr_client, vite_asset, vite_asset_url
 
 
 def reverse(name, **kwargs):
@@ -13,6 +14,9 @@ def environment(**options):
         {
             "static": static,
             "url_for": reverse,
+            "vite_hmr_client": vite_hmr_client,
+            "vite_asset": vite_asset,
+            "vite_asset_url": vite_asset_url,
         }
     )
     return env
