@@ -1,0 +1,25 @@
+{% extends 'users/layouts/guest.html' %}
+
+{% block title %}
+    Login
+{% endblock title %}
+
+{% block main %}
+    <form method="post" class="grid gap-4">
+        <div class="prose">
+            <h1 class="text-center">
+                Login
+            </h1>
+        </div>
+        {# djlint:off #}
+        <div class="divider m-0"></div>
+        {# djlint:on #}
+
+        {{ csrf_input }}
+        {{ form.as_div() }}
+
+        <button type="submit" class="btn btn-primary w-full">
+            Login
+        </button>
+    </form>
+{% endblock main %}
