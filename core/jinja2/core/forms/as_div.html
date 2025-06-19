@@ -30,8 +30,8 @@
         {{ field }}
 
         {# field help_text #}
-        <p class="text-sm opacity-95">
-            {{ field.help_text }}
-        </p>
+        <div class="text-sm opacity-80">
+            {{ field.help_text|safe }}
+        </div>
     </div>
 {% endfor %}
