@@ -12,6 +12,7 @@
     "@iconify/tailwind4": "^1.0.6",
     "@tailwindcss/typography": "^0.5.16",
     "@tailwindcss/vite": "^4.1.10",
+    "@types/alpinejs": "^3.13.11",
     "@types/bun": "latest",
     "concurrently": "^9.1.2",
     "daisyui": "^5.0.43",
@@ -20,5 +21,8 @@
   },
   "peerDependencies": {
     "typescript": "^5"
+  },
+  "dependencies": {
+    "alpinejs": "^3.14.9"
   }
 }
