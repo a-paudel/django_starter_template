@@ -9,7 +9,7 @@
         </title>
 
         {{ vite_hmr_client() }}
-        {{ vite_asset("resources/js/app.ts") }}
+        {{ vite_asset("resources/js/main.ts") }}
     </head>
     <body>
         {% block body %}
@@ -22,8 +22,7 @@
                     <div class="alert alert-{{ message.tags }} flex gap-2 items-center justify-center"
                          x-data="{show: true}"
                          x-show="show"
-                         x-transition.duration.300ms
-                         @after-leave="$el.remove()">
+                         x-transition.duration.300ms>
                         <span>{{ message }}</span>
                         {# btn-success btn-info btn-error btn-warning #}
                         <button class="btn btn-ghost btn-sm btn-square btn-{{ message.tags }}"

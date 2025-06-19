@@ -10,7 +10,7 @@ export default defineConfig({
         outDir: path.resolve(__dirname, "staticfiles"),
         copyPublicDir: true,
         rollupOptions: {
-            input: ["resources/js/app.ts"],
+            input: ["resources/js/main.ts"],
         },
     },
     plugins: [
