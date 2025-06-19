@@ -3,6 +3,7 @@ from django.templatetags.static import static
 from django.urls import reverse as _django_reverse
 from django_vite.templatetags.django_vite import vite_hmr_client, vite_asset, vite_asset_url
 from urllib.parse import urlencode
+from django.contrib import messages
 
 
 def reverse(name, query_params={}, **kwargs):
@@ -21,6 +22,7 @@ def environment(**options):
             "vite_hmr_client": vite_hmr_client,
             "vite_asset": vite_asset,
             "vite_asset_url": vite_asset_url,
+            "get_messages": messages.get_messages,
         }
     )
     return env

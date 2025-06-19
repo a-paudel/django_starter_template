@@ -1,12 +1,9 @@
 from typing import Any
-from django.shortcuts import render
 from django.contrib.auth.views import LoginView as _DjangoLoginView
 from django.urls import NoReverseMatch, reverse, reverse_lazy
 from django.views.generic import CreateView
 from django.contrib.messages.views import SuccessMessageMixin
-
 from users.forms import LoginForm, RegisterForm
-from users.models import User
 
 # Create your views here.
 

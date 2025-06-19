@@ -14,5 +14,26 @@
     <body>
         {% block body %}
         {% endblock body %}
+
+        {% if get_messages(request) %}
+            <div class="toast toast-top toast-end">
+                {% for message in get_messages(request) %}
+                    {# alert-success alert-info alert-error alert-warning #}
+                    <div class="alert alert-{{ message.tags }} flex gap-2 items-center justify-center"
+                         x-data="{show: true}"
+                         x-show="show"
+                         x-transition.duration.300ms
+                         @after-leave="$el.remove()">
+                        <span>{{ message }}</span>
+                        {# btn-success btn-info btn-error btn-warning #}
+                        <button class="btn btn-ghost btn-sm btn-square btn-{{ message.tags }}"
+                                @click="show=false">
+                            <span class="icon-[lucide--x]"></span>
+                        </button>
+                    </div>
+                {% endfor %}
+            </div>
+        {% endif %}
+
     </body>
 </html>
