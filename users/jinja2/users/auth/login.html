@@ -22,4 +22,12 @@
             Login
         </button>
     </form>
+
+    {% if has_register_page %}
+        <div class="prose">
+            <p>
+                Don't have an account? <a href="{{ url_for('users:register', request.GET) }}">Register</a>
+            </p>
+        </div>
+    {% endif %}
 {% endblock main %}
